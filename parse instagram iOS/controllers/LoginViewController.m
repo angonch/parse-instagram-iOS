@@ -35,10 +35,6 @@
         }
     }];
 }
-- (IBAction)signUpOnClick:(id)sender {
-    NSLog(@"User pressed sign up");
-    [self performSegueWithIdentifier:@"signUpSegue" sender:nil];
-}
 
 /*
 #pragma mark - Navigation

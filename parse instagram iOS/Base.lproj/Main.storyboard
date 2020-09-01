@@ -42,7 +42,6 @@
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8W-HY-xDG"/>
                                     <segue destination="08M-qK-Bx6" kind="show" identifier="signUpSegue" id="Ktx-VR-lE1"/>
                                 </connections>
                             </button>
@@ -158,6 +157,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="in5-zY-9wB"/>
+        <segue reference="lMv-vE-wuA"/>
     </inferredMetricsTieBreakers>
 </document>
