@@ -20,15 +20,18 @@
     //initialize parse
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
-        configuration.applicationId = @"AnnaParseInsta";
-        configuration.server = @"http://AnnaParseInsta.herokuapp.com/parse";
+        configuration.applicationId = @"anna-parsetagram";
+        configuration.server = @"https://anna-parsetagram.herokuapp.com/parse";
     }];
-    
+
     [Parse initializeWithConfiguration:config];
     
     if(Parse.currentConfiguration != nil) {
-        NSLog(@"Parse successfully initialized");
+        NSLog(@"parse successfully initialized");
+    } else {
+        NSLog(@"parse failed to initialize");
     }
+    
     
     return YES;
 }
