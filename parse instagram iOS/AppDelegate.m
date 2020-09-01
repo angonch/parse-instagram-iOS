@@ -31,8 +31,7 @@
     } else {
         NSLog(@"parse failed to initialize");
     }
-    
-    
+
     return YES;
 }
 
