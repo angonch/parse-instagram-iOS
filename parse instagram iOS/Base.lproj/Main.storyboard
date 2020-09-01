@@ -50,6 +50,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="J6J-T5-DJv"/>
                     <connections>
                         <outlet property="emailField" destination="z6A-RG-s0r" id="TDj-gX-2xE"/>
                         <outlet property="passwordField" destination="s7F-Q8-FSP" id="t7c-o4-uhv"/>
@@ -113,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="138" y="801"/>
         </scene>
-        <!--Home Feed View Controller-->
+        <!--Home-->
         <scene sceneID="eRQ-JQ-Fhd">
             <objects>
                 <viewController id="u1l-pm-TS7" customClass="HomeFeedViewController" sceneMemberID="viewController">
@@ -123,7 +124,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="S2T-22-Okb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JoY-wP-rhk"/>
+                    <navigationItem key="navigationItem" title="Home" id="JoY-wP-rhk">
+                        <barButtonItem key="backBarButtonItem" title="Logout" id="duD-hy-xFH"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" style="plain" id="2Xq-U0-p5n">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="modal" identifier="logoutSegue" modalPresentationStyle="fullScreen" id="b73-Si-ww7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFT-3G-WPF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
