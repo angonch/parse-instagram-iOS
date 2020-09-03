@@ -9,7 +9,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// delegate used to trigger function in other class with didShare is called here
+@protocol ComposeViewControllerDelegate
+
+- (void)didShare;
+
+@end
+
 @interface ComposeViewController : UIViewController
+
+@property (nonatomic, weak) id <ComposeViewControllerDelegate> delegate;
 
 @end
 

@@ -174,7 +174,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" style="plain" id="HFL-kw-lEs">
                             <connections>
-                                <segue destination="jPY-wO-Fhz" kind="modal" modalPresentationStyle="fullScreen" id="T4B-oS-jPS"/>
+                                <segue destination="jPY-wO-Fhz" kind="modal" identifier="composeSegue" modalPresentationStyle="fullScreen" id="T4B-oS-jPS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

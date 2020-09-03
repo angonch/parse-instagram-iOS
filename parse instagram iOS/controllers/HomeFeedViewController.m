@@ -8,8 +8,10 @@
 
 #import "HomeFeedViewController.h"
 #import "PostCell.h"
+#import "ComposeViewController.h"
+#import "SceneDelegate.h"
 
-@interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *posts;
@@ -28,6 +30,8 @@
     // get movies/ load up table view
     [self fetchPosts];
 }
+
+// TODO: logout tap - log out parse user
 
 -(void)fetchPosts {
     // construct PFQuery
@@ -68,14 +72,25 @@
     return cell;
 }
 
-/*
+-(void)didShare{
+    [self fetchPosts];
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//     Get the new view controller using [segue destinationViewController].
+//     Pass the selected object to the new view controller.
+    
+    // when compose button clicked - set delegate
+    if([[segue identifier] isEqualToString:@"composeSegue"]) {
+           UINavigationController *navigationController = [segue destinationViewController];
+           ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+           composeController.delegate = self;
+       }
 }
-*/
+
 
 @end

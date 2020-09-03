@@ -34,7 +34,11 @@
     [Post postUserImage:postImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if(succeeded){
             NSLog(@"Image successfully posted");
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.delegate didShare];
+            //finish and notify via delegate that a new post was shared
+            [self dismissViewControllerAnimated:YES completion:^{
+   //             [self.delegate didShare];
+            }];
         }
         else{
             NSLog(@"Failure posting: %@", error.localizedDescription);
