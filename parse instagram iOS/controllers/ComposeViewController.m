@@ -29,7 +29,8 @@
 }
 
 - (IBAction)ShareOnClick:(id)sender {
-    UIImage *postImage = [self resizeImage:self.photoImageView.image withSize:CGSizeMake(400, 400)];
+    // 414x414 = square width of the screen
+    UIImage *postImage = [self resizeImage:self.photoImageView.image withSize:CGSizeMake(414, 414)];
     [Post postUserImage:postImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if(succeeded){
             NSLog(@"Image successfully posted");

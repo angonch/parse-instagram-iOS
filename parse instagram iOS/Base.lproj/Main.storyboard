@@ -117,12 +117,54 @@
         <scene sceneID="eRQ-JQ-Fhd">
             <objects>
                 <viewController id="u1l-pm-TS7" customClass="HomeFeedViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X1r-1S-A4A">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="525" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="bOR-o1-ILq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="S2T-22-Okb"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="525" id="gIO-ii-fmr" customClass="PostCell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="525"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gIO-ii-fmr" id="PTl-cq-OeU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="525"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IeQ-nV-DRx" customClass="PFImageView">
+                                            <rect key="frame" x="0.0" y="42" width="414" height="414"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0X-IU-aVC">
+                                            <rect key="frame" x="12" y="13" width="224" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYD-JM-3d9">
+                                            <rect key="frame" x="12" y="464" width="390" height="28"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlP-ah-17s">
+                                            <rect key="frame" x="12" y="497" width="140" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="createdAtLabel" destination="BlP-ah-17s" id="bkt-gP-cWS"/>
+                                    <outlet property="descriptionLabel" destination="KYD-JM-3d9" id="RJT-K0-ZxI"/>
+                                    <outlet property="postImageView" destination="IeQ-nV-DRx" id="iHf-Sa-F9U"/>
+                                    <outlet property="userLabel" destination="l0X-IU-aVC" id="E7e-Ck-weH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                     <navigationItem key="navigationItem" title="Home" id="JoY-wP-rhk">
                         <barButtonItem key="backBarButtonItem" title="Logout" id="duD-hy-xFH"/>
                         <barButtonItem key="leftBarButtonItem" title="Logout" style="plain" id="2Xq-U0-p5n">
@@ -136,10 +178,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="bOR-o1-ILq" id="UF3-ds-xO3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFT-3G-WPF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2148" y="90"/>
+            <point key="canvasLocation" x="2147.826086956522" y="89.732142857142847"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="s3P-9V-LiT">
@@ -256,6 +301,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="T4B-oS-jPS"/>
         <segue reference="eVG-oA-ZQ4"/>
     </inferredMetricsTieBreakers>
     <resources>
