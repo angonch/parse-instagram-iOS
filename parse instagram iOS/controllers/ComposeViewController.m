@@ -7,6 +7,9 @@
 //
 
 #import "ComposeViewController.h"
+#import <UIKit/UIKit.h>
+#import "Post.h"
+#import <Parse/Parse.h>
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
@@ -26,8 +29,17 @@
 }
 
 - (IBAction)ShareOnClick:(id)sender {
-
-
+    UIImage *postImage = [self resizeImage:self.photoImageView.image withSize:CGSizeMake(400, 400)];
+    [Post postUserImage:postImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if(succeeded){
+            NSLog(@"Image successfully posted");
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        else{
+            NSLog(@"Failure posting: %@", error.localizedDescription);
+        }
+    }];
+    
     
 }
 
@@ -53,13 +65,26 @@
     
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Do something with the images (based on your use case)
     [self.photoImageView setImage:originalImage];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 /*

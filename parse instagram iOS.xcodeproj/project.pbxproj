@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8BFE44AA93ACD34FD44AE856 /* libPods-parse instagram iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52171BC37BD172F1E79FC9DC /* libPods-parse instagram iOSTests.a */; };
+		AB77D2412501637700148242 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AB77D2402501637700148242 /* Post.m */; };
 		ABCF379F24FD7BFB0073AD0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCF379E24FD7BFB0073AD0E /* AppDelegate.m */; };
 		ABCF37A224FD7BFB0073AD0E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCF37A124FD7BFB0073AD0E /* SceneDelegate.m */; };
 		ABCF37A524FD7BFB0073AD0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCF37A424FD7BFB0073AD0E /* ViewController.m */; };
@@ -48,6 +49,8 @@
 		80FD8FE0C4E557793392B0A6 /* Pods-parse instagram iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parse instagram iOSTests.release.xcconfig"; path = "Target Support Files/Pods-parse instagram iOSTests/Pods-parse instagram iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		98875CC9D2DF415A53932AB4 /* libPods-parse instagram iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-parse instagram iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42DBC19B69DB5449DF2BBD4 /* Pods-parse instagram iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parse instagram iOS.release.xcconfig"; path = "Target Support Files/Pods-parse instagram iOS/Pods-parse instagram iOS.release.xcconfig"; sourceTree = "<group>"; };
+		AB77D23F2501637700148242 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		AB77D2402501637700148242 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		ABCF379A24FD7BFB0073AD0E /* parse instagram iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "parse instagram iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCF379D24FD7BFB0073AD0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ABCF379E24FD7BFB0073AD0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +124,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AB77D23E2501635B00148242 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				AB77D23F2501637700148242 /* Post.h */,
+				AB77D2402501637700148242 /* Post.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		ABCF379124FD7BFA0073AD0E = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +158,7 @@
 		ABCF379C24FD7BFB0073AD0E /* parse instagram iOS */ = {
 			isa = PBXGroup;
 			children = (
+				AB77D23E2501635B00148242 /* models */,
 				ABF260D124FDA1ED00132D9C /* controllers */,
 				ABCF379D24FD7BFB0073AD0E /* AppDelegate.h */,
 				ABCF379E24FD7BFB0073AD0E /* AppDelegate.m */,
@@ -447,6 +460,7 @@
 				ABF260D724FDA22C00132D9C /* HomeFeedViewController.m in Sources */,
 				ABCF379F24FD7BFB0073AD0E /* AppDelegate.m in Sources */,
 				ABCF37B024FD7BFE0073AD0E /* main.m in Sources */,
+				AB77D2412501637700148242 /* Post.m in Sources */,
 				ABCF37A224FD7BFB0073AD0E /* SceneDelegate.m in Sources */,
 				ABF260DA24FECB4300132D9C /* SignUpViewController.m in Sources */,
 				ABF260D424FDA20400132D9C /* LoginViewController.m in Sources */,
