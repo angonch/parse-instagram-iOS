@@ -7,8 +7,16 @@
 //
 
 #import "PostDetailsViewController.h"
+#import <Parse/PFImageView.h>
 
 @interface PostDetailsViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *postImageView;
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
+
+
 
 @end
 
@@ -17,6 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.usernameLabel.text = self.post.user.username;
+    self.captionLabel.text = self.post[@"description"];
+    self.createdAtLabel.text = self.post.createdAtString;
+    self.postImageView.file = self.post[@"image"];
+    [self.postImageView loadInBackground];
 }
 
 /*

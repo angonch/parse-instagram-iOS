@@ -115,7 +115,7 @@
         // id = table view cell that was tapped on
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        NSDictionary *post = self.posts[indexPath.row];
+        Post *post = self.posts[indexPath.row];
         
         PostDetailsViewController *detailsViewController = [segue destinationViewController];
         // set public property to be the selected movie
