@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *posts;
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation HomeFeedViewController
@@ -26,6 +28,12 @@
     // setting to self calls this object to do the required methods
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    // add refresh control to tableview
+    // addtarget - call fetch events when refreshed
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshPosts:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     // get movies/ load up table view
     [self fetchPosts];
@@ -53,7 +61,14 @@
             // handle error
             NSLog(@"%@", error.localizedDescription);
         }
+        // stop refresh control
+        [self.refreshControl endRefreshing];
     }];
+}
+
+- (void)refreshPosts:(UIRefreshControl *)refreshControl {
+    [self fetchPosts];
+    [refreshControl endRefreshing];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
