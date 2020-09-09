@@ -161,6 +161,7 @@
                                     <outlet property="descriptionLabel" destination="KYD-JM-3d9" id="RJT-K0-ZxI"/>
                                     <outlet property="postImageView" destination="IeQ-nV-DRx" id="iHf-Sa-F9U"/>
                                     <outlet property="userLabel" destination="l0X-IU-aVC" id="E7e-Ck-weH"/>
+                                    <segue destination="I8L-wM-Fvn" kind="modal" identifier="postDetailsSegue" id="IAk-uZ-H3H"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -186,6 +187,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFT-3G-WPF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2147.826086956522" y="89.732142857142847"/>
+        </scene>
+        <!--Post Details View Controller-->
+        <scene sceneID="Gnz-vz-MeU">
+            <objects>
+                <viewController id="I8L-wM-Fvn" customClass="PostDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9tU-c5-aHa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nM4-4t-U9Z"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qa2-rE-jh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2161" y="871"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="s3P-9V-LiT">

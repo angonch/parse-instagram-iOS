@@ -10,6 +10,7 @@
 #import "PostCell.h"
 #import "ComposeViewController.h"
 #import "SceneDelegate.h"
+#import "PostDetailsViewController.h"
 
 @interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
 
@@ -109,7 +110,17 @@
            UINavigationController *navigationController = [segue destinationViewController];
            ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
            composeController.delegate = self;
-       }
+    } else if ([[segue identifier] isEqualToString:@"postDetailsSegue"]) {
+        NSLog(@"Tapping on a post");
+        // id = table view cell that was tapped on
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        NSDictionary *post = self.posts[indexPath.row];
+        
+        PostDetailsViewController *detailsViewController = [segue destinationViewController];
+        // set public property to be the selected movie
+        detailsViewController.post = post;
+    }
 }
 
 
