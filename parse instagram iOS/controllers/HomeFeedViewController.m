@@ -39,7 +39,12 @@
     [self fetchPosts];
 }
 
-// TODO: logout tap - log out parse user
+- (IBAction)logoutOnClick:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+        [self performSegueWithIdentifier:@"logoutSegue" sender:nil];
+    }];
+}
 
 -(void)fetchPosts {
     // construct PFQuery

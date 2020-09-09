@@ -169,7 +169,7 @@
                         <barButtonItem key="backBarButtonItem" title="Logout" id="duD-hy-xFH"/>
                         <barButtonItem key="leftBarButtonItem" title="Logout" style="plain" id="2Xq-U0-p5n">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="modal" identifier="logoutSegue" modalPresentationStyle="fullScreen" id="b73-Si-ww7"/>
+                                <action selector="logoutOnClick:" destination="u1l-pm-TS7" id="dtL-rF-XF9"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" style="plain" id="HFL-kw-lEs">
@@ -180,6 +180,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="bOR-o1-ILq" id="UF3-ds-xO3"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="logoutSegue" modalPresentationStyle="fullScreen" id="I7d-V4-lr8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFT-3G-WPF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -301,8 +302,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="T4B-oS-jPS"/>
-        <segue reference="eVG-oA-ZQ4"/>
+        <segue reference="lMv-vE-wuA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
