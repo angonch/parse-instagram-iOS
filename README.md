@@ -10,7 +10,7 @@ Parsetagram is a photo sharing app using Parse as its backend.
 - [X] User can take a photo, add a caption, and post it to "Instagram"
 - [X] User can view the last 20 posts submitted to "Instagram"
 - [X] User can pull to refresh the last 20 posts submitted to "Instagram"
-- [ ] User can tap a post to view post details, including timestamp and caption.
+- [X] User can tap a post to view post details, including timestamp and caption.
 - [X] Run your app on your phone and use the camera to take the photo
 - [ ] Style the login page to look like the real Instagram login page.
 - [ ] Style the feed to look like the real Instagram feed.
